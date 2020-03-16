@@ -1,0 +1,9 @@
+[submodule "CTFd/plugins/ctfd-whale"]
+	path = CTFd/plugins/ctfd-whale
+	url = https://github.com/mssctf-platform/ctfd-whale
+[submodule "CTFd/plugins/ctfd-more-events"]
+	path = CTFd/plugins/ctfd-more-events
+	url = https://github.com/mssctf-platform/ctfd-more-events
+[submodule "CTFd/plugins/ctfd-acm-challenges"]
+	path = CTFd/plugins/ctfd-acm-challenges
+	url = https://github.com/mssctf-platform/ctfd-acm-challenges
