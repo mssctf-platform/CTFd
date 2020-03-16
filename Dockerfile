@@ -2,6 +2,7 @@ FROM python:3.7-alpine
 WORKDIR /opt/CTFd
 RUN mkdir -p /opt/CTFd /var/log/CTFd /var/uploads
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 RUN apk update && \
     apk add \
         python \
@@ -18,10 +19,10 @@ RUN apk update && \
 
 COPY . /opt/CTFd
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN for d in CTFd/plugins/*; do \
         if [ -f "$d/requirements.txt" ]; then \
-            pip install -r $d/requirements.txt; \
+            pip install -r $d/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple; \
         fi; \
     done;
 

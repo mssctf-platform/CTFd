@@ -5,7 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const RemoveStrictPlugin = require('remove-strict-webpack-plugin')
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 const roots = {
   'themes/core': {
@@ -144,6 +145,7 @@ function getJSConfig(root, type, entries, mode) {
         ],
         safe: true,
       }),
+      new CompressionPlugin(),
     ],
     resolve: {
       extensions: ['.js'],
